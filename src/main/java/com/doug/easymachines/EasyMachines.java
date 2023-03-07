@@ -1,27 +1,24 @@
 package com.doug.easymachines;
 
+import com.doug.easymachines.block.ESBlocks;
+import com.doug.easymachines.block.ESOres;
+import com.doug.easymachines.item.ESCreativeModeTab;
+import com.doug.easymachines.item.ESItems;
+import com.doug.easymachines.item.custom.ESMaterials;
+import com.doug.easymachines.item.custom.ESRefinedMaterials;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -33,14 +30,6 @@ public class EasyMachines
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
     public EasyMachines()
     {
@@ -49,13 +38,11 @@ public class EasyMachines
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ESItems.register(modEventBus);
+        ESBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -70,16 +57,49 @@ public class EasyMachines
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
-    }
+        if (event.getTab() == ESCreativeModeTab.EASY_MACHINES_TAB) {
+            event.accept(ESMaterials.COPPER_INGOT);
+            event.accept(ESMaterials.TIN_INGOT);
+            event.accept(ESMaterials.SILVER_INGOT);
+            event.accept(ESMaterials.LEAD_INGOT);
+            event.accept(ESMaterials.INVAR_INGOT);
+            event.accept(ESMaterials.FERROUS_INGOT);
+            event.accept(ESMaterials.ELECTRUM_INGOT);
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+            event.accept(ESRefinedMaterials.CRUSHED_COPPER);
+            event.accept(ESRefinedMaterials.CRUSHED_TIN);
+            event.accept(ESRefinedMaterials.CRUSHED_SILVER);
+            event.accept(ESRefinedMaterials.CRUSHED_LEAD);
+            event.accept(ESRefinedMaterials.CRUSHED_INVAR);
+            event.accept(ESRefinedMaterials.CRUSHED_FERROUS);
+            event.accept(ESRefinedMaterials.CRUSHED_ELECTRUM);
+
+            event.accept(ESRefinedMaterials.COPPER_NUGGET);
+            event.accept(ESRefinedMaterials.TIN_NUGGET);
+            event.accept(ESRefinedMaterials.SILVER_NUGGET);
+            event.accept(ESRefinedMaterials.LEAD_NUGGET);
+            event.accept(ESRefinedMaterials.INVAR_NUGGET);
+            event.accept(ESRefinedMaterials.FERROUS_NUGGET);
+            event.accept(ESRefinedMaterials.ELECTRUM_NUGGET);
+
+
+
+
+            event.accept(ESBlocks.COPPER_BLOCK);
+            event.accept(ESBlocks.TIN_BLOCK);
+            event.accept(ESBlocks.SILVER_BLOCK);
+            event.accept(ESBlocks.LEAD_BLOCK);
+            event.accept(ESBlocks.INVAR_BLOCK);
+            event.accept(ESBlocks.FERROUS_BLOCK);
+            event.accept(ESBlocks.ELECTRUM_BLOCK);
+
+            event.accept(ESOres.COPPER_ORE);
+            event.accept(ESOres.TIN_ORE);
+            event.accept(ESOres.SILVER_ORE);
+            event.accept(ESOres.LEAD_ORE);
+            event.accept(ESOres.FERROUS_ORE);
+
+        }
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

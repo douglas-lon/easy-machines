@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "easymachines:silver_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "easymachines:silver_ingot"
+  }
+}

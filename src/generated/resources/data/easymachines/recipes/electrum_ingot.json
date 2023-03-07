@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "easymachines:electrum_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "easymachines:electrum_ingot"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "item.easymachines.copper_ingot": "Copper Ingot",
+  "item.easymachines.tin_ingot": "Tin Ingot",
+  "item.easymachines.silver_ingot": "Silver Ingot",
+  "item.easymachines.lead_ingot": "Lead Ingot",
+  "item.easymachines.invar_ingot": "Invar Ingot",
+  "item.easymachines.ferrous_ingot": "Ferrous Ingot",
+  "item.easymachines.electrum_ingot": "Electrum Ingot",
+
+  "item.easymachines.copper_nugget": "Copper Nugget",
+  "item.easymachines.tin_nugget": "Tin Nugget",
+  "item.easymachines.silver_nugget": "Silver Nugget",
+  "item.easymachines.lead_nugget": "Lead Nugget",
+  "item.easymachines.invar_nugget": "Invar Nugget",
+  "item.easymachines.ferrous_nugget": "Ferrous Nugget",
+  "item.easymachines.electrum_nugget": "Electrum Nugget",
+
+  "item.easymachines.crushed_copper": "Crushed Copper",
+  "item.easymachines.crushed_tin": "Crushed Tin",
+  "item.easymachines.crushed_silver": "Crushed Silver",
+  "item.easymachines.crushed_lead": "Crushed Lead",
+  "item.easymachines.crushed_invar": "Crushed Invar",
+  "item.easymachines.crushed_ferrous": "Crushed Ferrous",
+  "item.easymachines.crushed_electrum": "Crushed Electrum",
+
+  "block.easymachines.copper_block": "Copper Block",
+  "block.easymachines.tin_block": "Tin Block",
+  "block.easymachines.silver_block": "Silver Block",
+  "block.easymachines.lead_block": "Lead Block",
+  "block.easymachines.invar_block": "Invar Block",
+  "block.easymachines.ferrous_block": "Ferrous Block",
+  "block.easymachines.electrum_block": "Electrum Block",
+
+  "block.easymachines.copper_ore": "Copper Ore",
+  "block.easymachines.tin_ore": "Tin Ore",
+  "block.easymachines.silver_ore": "Silver Ore",
+  "block.easymachines.lead_ore": "Lead Ore",
+  "block.easymachines.ferrous_ore": "Ferrous Ore",
+
+
+
+  "creativemodetab.easymachines_tab": "Easy Machines Tab"
+}

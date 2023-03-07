@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "cooper_ingot",
+  "ingredient": {
+    "item": "easymachines:copper_ore"
+  },
+  "result": "easymachines:copper_ingot"
+}

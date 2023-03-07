@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "easymachines:invar_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "easymachines:invar_ingot"
+  }
+}

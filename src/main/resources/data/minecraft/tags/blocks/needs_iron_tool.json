@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "easymachines:invar_block",
+    "easymachines:ferrous_block",
+    "easymachines:electrum_block",
+    "easymachines:ferrous_ore"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "ferrous_ingot",
+  "ingredient": {
+    "item": "easymachines:ferrous_ore"
+  },
+  "result": "easymachines:ferrous_ingot"
+}

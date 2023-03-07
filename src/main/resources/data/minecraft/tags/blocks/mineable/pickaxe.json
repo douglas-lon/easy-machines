@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "easymachines:copper_block",
+    "easymachines:tin_block",
+    "easymachines:silver_block",
+    "easymachines:lead_block",
+    "easymachines:invar_block",
+    "easymachines:ferrous_block",
+    "easymachines:electrum_block",
+
+    "easymachines:copper_ore",
+    "easymachines:tin_ore",
+    "easymachines:silver_ore",
+    "easymachines:lead_ore",
+    "easymachines:ferrous_ore"
+
+  ]
+}
